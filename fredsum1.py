@@ -10,14 +10,14 @@ import time
 def imprime(string, codigo=''):
 
 	class bcolors:
-	    HEADER = '\033[95m'
-	    OKBLUE = '\033[94m'
-	    OKGREEN = '\033[92m'
-	    WARNING = '\033[93m'
-	    FAIL = '\033[91m'
-	    ENDC = '\033[0m'
-	    BOLD = '\033[1m'
-	    UNDERLINE = '\033[4m'
+		HEADER = '\033[95m'
+		OKBLUE = '\033[94m'
+		OKGREEN = '\033[92m'
+		WARNING = '\033[93m'
+		FAIL = '\033[91m'
+		ENDC = '\033[0m'
+		BOLD = '\033[1m'
+		UNDERLINE = '\033[4m'
 
 	if codigo == 'FAIL':
 		print (bcolors.FAIL + string + bcolors.ENDC)
@@ -57,11 +57,11 @@ def hash_file (filepath):
 
 	try:
 		with f.open('rb') as file:
-		    while True:
-		        data = file.read(BUF_SIZE)
-		        if not data:
-		            break
-		        sha1.update(data)
+			while True:
+				data = file.read(BUF_SIZE)
+				if not data:
+					break
+				sha1.update(data)
 	except:
 		imprime ('      [ERROR] ' + filepath + ' -> not found.', 'FAIL')
 		return('')
